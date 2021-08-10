@@ -20,8 +20,9 @@ namespace Conbot
         {
             _client = new DiscordSocketClient();
             _commands = new CommandService();
-            _client.Log += Log;
+            //_client.Log += Log;
 
+            
             var TOKEN = "";
 
             await _client.LoginAsync(TokenType.Bot, TOKEN);
@@ -30,7 +31,7 @@ namespace Conbot
             await Task.Delay(-1);
         }
 
-        private Task Log(LogMessage msg)
+       /* private Task Log(LogMessage msg)
         {
             Console.WriteLine(msg.ToString());
             return Task.CompletedTask;
@@ -55,5 +56,6 @@ namespace Conbot
                 if (!result.IsSuccess) Console.WriteLine(result.ErrorReason);
             }
         }
+       */
     }
 }
